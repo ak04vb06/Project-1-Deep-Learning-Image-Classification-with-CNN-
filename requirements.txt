@@ -1,0 +1,37 @@
+torch>=2.0.0
+torchvision>=0.15.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.2.0
+matplotlib>=3.7.0
+Pillow>=9.5.0
+tqdm>=4.65.0
+gradio>=3.35.0
+# GLOBAL IMPORTS FOR PYTORCH MODELS (1, 2, & 3)
+# ---------------------------------------------------------
+import os
+import pandas as pd
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+
+# PyTorch core and Neural Network modules
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+
+# Computer Vision specific tools
+from torchvision import transforms, models
+
+# Evaluation and Metrics
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+# Optional: To avoid errors if seaborn is missing for some users
+try:
+    import seaborn as sns
+except ImportError:
+    sns = None
+
+print(f"✅ All modules loaded. Using device: {torch.device('cuda' if torch.cuda.is_available() else 'cpu')}")
